@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libros que Cambian Vidas — Los Que No Se Rinden</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #162642;
+  --gold: #D4AF7E;
+  --dark: #0d1a2e;
+  --cream: #F5F0E8;
+  --dim: rgba(245,240,232,0.65);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--navy); color: var(--cream); font-family: 'Lato', sans-serif; line-height: 1.7; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--dark), var(--navy), #1e3a5f);
+  padding: 80px 20px 70px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(212,175,126,0.07), transparent 60%);
+}
+.hero-eyebrow {
+  font-size: .72em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .8;
+  margin-bottom: 18px;
+  position: relative;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2em, 5vw, 3.2em);
+  color: var(--gold);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  position: relative;
+}
+.gl { width: 50px; height: 2px; background: var(--gold); margin: 20px auto; }
+.hero p {
+  font-size: 1.05em;
+  color: var(--dim);
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* BOOKS GRID */
+.books-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+.section-label {
+  font-size: .72em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .7;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6em, 4vw, 2.2em);
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 50px;
+}
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+.book-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,126,0.18);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all .35s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.book-card:hover {
+  background: rgba(212,175,126,0.08);
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+.book-icon { font-size: 3em; }
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  color: var(--gold);
+  line-height: 1.3;
+}
+.book-author { font-size: .82em; color: var(--dim); letter-spacing: 1px; }
+.book-desc { font-size: .85em; color: var(--dim); line-height: 1.6; flex-grow: 1; }
+.book-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: .78em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all .3s;
+  width: 100%;
+}
+.book-btn:hover { background: var(--cream); transform: translateY(-2px); }
+
+/* QUOTE */
+.quote-band {
+  background: var(--dark);
+  border-top: 1px solid rgba(212,175,126,0.15);
+  border-bottom: 1px solid rgba(212,175,126,0.15);
+  padding: 60px 20px;
+  text-align: center;
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2em, 3vw, 1.7em);
+  font-style: italic;
+  color: var(--gold);
+  max-width: 600px;
+  margin: 0 auto 14px;
+  line-height: 1.5;
+}
+.quote-author { font-size: .75em; letter-spacing: 3px; text-transform: uppercase; opacity: .4; }
+
+/* CTA */
+.cta-section {
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cta-section p { color: var(--dim); margin-bottom: 30px; font-size: 1em; }
+.cta-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: .85em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all .3s;
+}
+.cta-btn:hover { background: var(--cream); transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(212,175,126,0.1);
+}
+.footer-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1em; margin-bottom: 6px; }
+footer p { font-size: .78em; opacity: .35; letter-spacing: 1px; }
+
+@media (max-width: 600px) {
+  .books-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Los Que No Se Rinden · Lecturas Recomendadas</div>
+  <h1>Libros que<br>Cambian Vidas</h1>
+  <div class="gl"></div>
+  <p>Estos 4 libros transformaron la mentalidad de millones. Los recomiendo porque los he estudiado y cada uno tiene el poder de cambiar tu forma de ver el mundo.</p>
+</div>
+
+<!-- LIBROS -->
+<div class="books-section">
+  <div class="section-label">Mi selección personal</div>
+  <h2 class="section-title">4 Libros Esenciales</h2>
+
+  <div class="books-grid">
+
+    <!-- LIBRO 1 -->
+    <div class="book-card">
+      <div class="book-icon">📗</div>
+      <div class="book-title">Los 4 Acuerdos</div>
+      <div class="book-author">Don Miguel Ruiz</div>
+      <div class="book-desc">Una guía práctica para la libertad personal. Cuatro principios simples que pueden transformar tu vida y crear una nueva experiencia de libertad, felicidad y amor.</div>
+      <!-- ✏️ REEMPLAZA # CON TU LINK DE AFILIADO DE AMAZON -->
+      <a href="#" class="book-btn">Ver en Amazon →</a>
+    </div>
+
+    <!-- LIBRO 2 -->
+    <div class="book-card">
+      <div class="book-icon">📘</div>
+      <div class="book-title">El Poder del Ahora</div>
+      <div class="book-author">Eckhart Tolle</div>
+      <div class="book-desc">Una guía para la iluminación espiritual. Tolle nos enseña que vivir el momento presente es el camino hacia la paz interior y la verdadera felicidad.</div>
+      <!-- ✏️ REEMPLAZA # CON TU LINK DE AFILIADO DE AMAZON -->
+      <a href="#" class="book-btn">Ver en Amazon →</a>
+    </div>
+
+    <!-- LIBRO 3 -->
+    <div class="book-card">
+      <div class="book-icon">📙</div>
+      <div class="book-title">Hábitos Atómicos</div>
+      <div class="book-author">James Clear</div>
+      <div class="book-desc">El sistema probado para construir buenos hábitos y eliminar los malos. Pequeños cambios que producen resultados extraordinarios con el tiempo.</div>
+      <!-- ✏️ REEMPLAZA # CON TU LINK DE AFILIADO DE AMAZON -->
+      <a href="#" class="book-btn">Ver en Amazon →</a>
+    </div>
+
+    <!-- LIBRO 4 -->
+    <div class="book-card">
+      <div class="book-icon">📕</div>
+      <div class="book-title">Mindset</div>
+      <div class="book-author">Carol Dweck</div>
+      <div class="book-desc">La psicóloga de Stanford revela cómo la mentalidad que adoptamos determina nuestro éxito. La diferencia entre la mentalidad fija y la mentalidad de crecimiento.</div>
+      <!-- ✏️ REEMPLAZA # CON TU LINK DE AFILIADO DE AMAZON -->
+      <a href="#" class="book-btn">Ver en Amazon →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <div class="quote-text">"No pares cuando estés cansado. Para cuando hayas terminado."</div>
+  <div class="quote-author">— Los Que No Se Rinden · Daniel Motola-Pedroso</div>
+</div>
+
+<!-- CTA NEWSLETTER -->
+<div class="cta-section">
+  <h2 style="font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8em; margin-bottom:16px;">¿Quieres más recomendaciones?</h2>
+  <p>Cada semana comparto frases, libros y estrategias para los que no se rinden. Gratis en tu correo.</p>
+  <!-- ✏️ REEMPLAZA # CON TU LINK DE SUBSTACK -->
+  <a href="#" class="cta-btn">Suscribirse Gratis →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">Pedroso Publishing</div>
+  <p>© 2026 Daniel Motola-Pedroso · Este sitio contiene links de afiliados de Amazon.</p>
+</footer>
+
+</body>
+</html>
